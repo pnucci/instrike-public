@@ -5,54 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>instrike</title>
-  <script type="module" crossorigin src="./assets/index-BU-Y0zvl.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-B4Ow5QSy.css">
+    <link rel="manifest" href="./manifest.webmanifest">
+    <link rel="icon" type="image/svg+xml" sizes="32x32" href="/icons/favicon-32.svg">
+    <link rel="icon" type="image/svg+xml" sizes="16x16" href="/icons/favicon-16.svg">
+  <script type="module" crossorigin src="./assets/index-DTibdEhM.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-NgEU-S79.css">
 </head>
 
 <body>
     <div id="connection-lost-msg" class="hidden">We are having some issues. Check your device internet connection</div>
 
-    <!-- Landing Page -->
-    <div id="landing-page">
-        <header class="landing-header">
-            <div class="landing-title">instrike</div>
-        </header>
-        <main class="landing-main">
-            <div id="sign-in"></div>
-            <div class="landing-panel hidden-by-default">
-                <div id="session-not-found-container" class="session-error-container hidden">
-                    <div class="session-error-content">
-                        <svg viewBox="0 0 24 24" class="error-icon">
-                            <path fill="currentColor" d="M11,15H13V17H11V15M11,7H13V13H11V7M12,2C6.47,2 2,6.5 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20Z" />
-                        </svg>
-                        <div class="error-text">
-                            Session not found. Please double check the session ID.
-                        </div>
-                    </div>
-                </div>
-                <div class="landing-actions">
-                    <button class="landing-button" id="new-session-btn">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" />
-                        </svg>
-                        New training
-                    </button>
-                    <div class="join-action">
-                        <input type="text" class="join-input" placeholder="Enter a code or link">
-                        <button class="join-button" id="join-session-btn">Join</button>
-                    </div>
-                </div>
-                <div id="auto-join-container" class="hidden">
-                    <div id="auto-join-message" class="auto-join-message">
-                        Joining session...
-                    </div>
-                    <div id="loading-progress-container" class="progress-bar-container">
-                        <div id="loading-progress-fill" class="progress-bar-fill"></div>
-                    </div>
-                </div>
-            </div>
-        </main>
-    </div>
+    <!-- Landing Page (rendered by client/views/landing-view.js) -->
+    <div id="landing-page"></div>
 
     <!-- Main App UI -->
     <div id="main-app-container" class="hidden">
@@ -155,10 +119,7 @@
                                             </button>
                                             <button id="test-btn" class="action-button test-btn tooltip"
                                                 data-tooltip="Test (T)" data-tooltip-position="top">
-                                                <svg viewBox="0 0 24 24">
-                                                    <path
-                                                        d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M10,16.5V7.5L16,12L10,16.5Z" />
-                                                </svg>
+                                                TEST
                                             </button>
                                         </div>
                                     </div>
@@ -318,13 +279,13 @@
             </svg>
             <span>Training</span>
         </button>
-        <button id="nav-stats" class="nav-item">
+        <button id="nav-stats" class="nav-item auth-only hidden">
             <svg viewBox="0 0 24 24">
                 <path d="M22,21H2V3H4V19H6V10H10V19H12V6H16V19H18V14H22V21Z" />
             </svg>
             <span>Stats</span>
         </button>
-        <button id="nav-history" class="nav-item">
+        <button id="nav-history" class="nav-item auth-only hidden">
             <svg viewBox="0 0 24 24">
                 <path d="M19,3H14.82C14.4,1.84 13.3,1 12,1C10.7,1 9.6,1.84 9.18,3H5A2,2 0 0,0 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3M12,3A1,1 0 0,1 13,4A1,1 0 0,1 12,5A1,1 0 0,1 11,4A1,1 0 0,1 12,3M7,7H17V9H7V7M7,11H17V13H7V11M7,15H17V17H7V15Z" />
             </svg>
@@ -412,13 +373,13 @@
     <div id="profile-screen" class="full-screen hidden">
         <div class="full-screen-content no-header">
             <div class="menu-items">
-                <button id="profile-manage-account" class="menu-item">
+                <!-- <button id="profile-manage-account" class="menu-item">
                     <svg viewBox="0 0 24 24">
                         <path
                             d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z" />
                     </svg>
                     Manage Account
-                </button>
+                </button> -->
                 <button id="profile-help" class="menu-item">
                     <svg viewBox="0 0 24 24">
                         <path
@@ -431,7 +392,7 @@
                         <path
                             d="M18,16.08C17.24,16.08 16.56,16.38 16.04,16.85L8.91,12.7C8.96,12.47 9,12.24 9,12C9,11.76 8.96,11.53 8.91,11.3L16.04,7.15C16.56,7.62 17.24,7.92 18,7.92C19.66,7.92 21,6.58 21,4.92C21,3.26 19.66,1.92 18,1.92C16.34,1.92 15,3.26 15,4.92C15,5.16 15.04,5.39 15.09,5.62L7.96,9.77C7.44,9.3 6.76,9 6,9C4.34,9 3,10.34 3,12C3,13.66 4.34,15 6,15C6.76,15 7.44,14.7 7.96,14.23L15.09,18.38C15.04,18.61 15,18.84 15,19.08C15,20.74 16.34,22.08 18,22.08C19.66,22.08 21,20.74 21,19.08C21,17.42 19.66,16.08 18,16.08Z" />
                     </svg>
-                    Share
+                    Share Instrike
                 </button>
                 <button id="profile-sign-out" class="menu-item">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -457,13 +418,13 @@
                     d="M18,16.08C17.24,16.08 16.56,16.38 16.04,16.85L8.91,12.7C8.96,12.47 9,12.24 9,12C9,11.76 8.96,11.53 8.91,11.3L16.04,7.15C16.56,7.62 17.24,7.92 18,7.92C19.66,7.92 21,6.58 21,4.92C21,3.26 19.66,1.92 18,1.92C16.34,1.92 15,3.26 15,4.92C15,5.16 15.04,5.39 15.09,5.62L7.96,9.77C7.44,9.3 6.76,9 6,9C4.34,9 3,10.34 3,12C3,13.66 4.34,15 6,15C6.76,15 7.44,14.7 7.96,14.23L15.09,18.38C15.04,18.61 15,18.84 15,19.08C15,20.74 16.34,22.08 18,22.08C19.66,22.08 21,20.74 21,19.08C21,17.42 19.66,16.08 18,16.08Z" />
             </svg>
         </button>
-        <button id="history-btn" class="action-button tooltip" data-tooltip="History"
+        <button id="history-btn" class="action-button tooltip auth-only hidden" data-tooltip="History"
             data-tooltip-position="bottom">
             <svg viewBox="0 0 24 24" fill="currentColor">
                 <path d="M19,3H14.82C14.4,1.84 13.3,1 12,1C10.7,1 9.6,1.84 9.18,3H5A2,2 0 0,0 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3M12,3A1,1 0 0,1 13,4A1,1 0 0,1 12,5A1,1 0 0,1 11,4A1,1 0 0,1 12,3M7,7H17V9H7V7M7,11H17V13H7V11M7,15H17V17H7V15Z" />
             </svg>
         </button>
-        <button id="stats-btn" class="action-button exit-btn tooltip" data-tooltip="Stats"
+        <button id="stats-btn" class="action-button exit-btn tooltip auth-only hidden" data-tooltip="Stats"
             data-tooltip-position="bottom">
             <svg viewBox="0 0 24 24" fill="currentColor">
                 <path d="M22,21H2V3H4V19H6V10H10V19H12V6H16V19H18V14H22V21Z" />
@@ -485,7 +446,7 @@
                     d="M130.5,206.2l-18.9-27.3c-8.8-9.9-8.3-25,1.1-34.4c4.7-4.7,11.1-7.4,17.8-7.4c7.4,0,14.1,2.9,19.7,9.5V98.5c0-10.8-8.8-19.7-19.7-19.7H61.7C50.8,78.8,42,87.6,42,98.5v108.1c0,10.8,8.8,19.6,19.7,19.6h69.9c-0.7-3.1-1.1-6.2-1.1-9.5L130.5,206.2L130.5,206.2z M115.7,108.3c2.7,0,4.9,2.2,4.9,4.9c0,2.7-2.2,4.9-4.9,4.9c-2.7,0-4.9-2.2-4.9-4.9C110.8,110.5,113,108.3,115.7,108.3z M115.7,127.9c2.7,0,4.9,2.2,4.9,4.9c0,2.7-2.2,4.9-4.9,4.9c-2.7,0-4.9-2.2-4.9-4.9C110.8,130.1,113,127.9,115.7,127.9z M76.4,196.7c-2.7,0-4.9-2.2-4.9-4.9c0-2.7,2.2-4.9,4.9-4.9s4.9,2.2,4.9,4.9C81.3,194.5,79.1,196.7,76.4,196.7z M76.4,177.1c-2.7,0-4.9-2.2-4.9-4.9c0-2.7,2.2-4.9,4.9-4.9s4.9,2.2,4.9,4.9C81.3,174.8,79.1,177.1,76.4,177.1z M76.4,157.4c-2.7,0-4.9-2.2-4.9-4.9c0-2.7,2.2-4.9,4.9-4.9s4.9,2.2,4.9,4.9C81.3,155.2,79.1,157.4,76.4,157.4z M76.4,137.8c-2.7,0-4.9-2.2-4.9-4.9c0-2.7,2.2-4.9,4.9-4.9s4.9,2.2,4.9,4.9C81.3,135.5,79.1,137.8,76.4,137.8z M76.4,118.1c-2.7,0-4.9-2.2-4.9-4.9c0-2.7,2.2-4.9,4.9-4.9s4.9,2.2,4.9,4.9C81.3,115.9,79.1,118.1,76.4,118.1z M96.1,196.7c-2.7,0-4.9-2.2-4.9-4.9c0-2.7,2.2-4.9,4.9-4.9c2.7,0,4.9,2.2,4.9,4.9C101,194.5,98.8,196.7,96.1,196.7z M96.1,177.1c-2.7,0-4.9-2.2-4.9-4.9c0-2.7,2.2-4.9,4.9-4.9c2.7,0,4.9,2.2,4.9,4.9C101,174.8,98.8,177.1,96.1,177.1z M96.1,157.4c-2.7,0-4.9-2.2-4.9-4.9c0-2.7,2.2-4.9,4.9-4.9c2.7,0,4.9,2.2,4.9,4.9C101,155.2,98.8,157.4,96.1,157.4z M96.1,137.8c-2.7,0-4.9-2.2-4.9-4.9c0-2.7,2.2-4.9,4.9-4.9c2.7,0,4.9,2.2,4.9,4.9C101,135.5,98.8,137.8,96.1,137.8z M96.1,118.1c-2.7,0-4.9-2.2-4.9-4.9c0-2.7,2.2-4.9,4.9-4.9c2.7,0,4.9,2.2,4.9,4.9C101,115.9,98.8,118.1,96.1,118.1z M53.1,33c12.9-8.6,28-13.2,43.6-13.2c15.6,0,30.7,4.6,43.6,13.2c0.8,0.6,1.8,0.8,2.7,0.8c1.6,0,3.2-0.8,4.1-2.2c1.5-2.2,0.9-5.3-1.4-6.8c-14.5-9.7-31.5-14.9-49-14.9s-34.5,5.1-49.1,14.9c-2.2,1.5-2.9,4.6-1.3,6.8C47.8,33.9,50.8,34.5,53.1,33z M132.1,50.2c1.6,0,3.2-0.7,4.1-2.2c1.5-2.3,0.9-5.3-1.3-6.8c-11.3-7.6-24.5-11.6-38.1-11.6c-13.6,0-26.8,4-38.1,11.6c-2.3,1.5-2.9,4.6-1.4,6.8c1.5,2.2,4.6,2.9,6.8,1.3c9.7-6.5,21-9.9,32.7-9.9s23,3.4,32.7,9.9C130.2,49.9,131.2,50.2,132.1,50.2z M69.4,57.6c-2.2,1.5-2.9,4.6-1.3,6.8c1.5,2.2,4.6,2.8,6.8,1.3c12.9-8.6,30.6-8.6,43.6,0c0.8,0.6,1.8,0.8,2.7,0.8c1.6,0,3.2-0.8,4.1-2.2c1.5-2.2,0.9-5.3-1.4-6.8C107.7,46.7,85.6,46.8,69.4,57.6z M213.3,238.5l-19-33.3v-43.5c0-12.1-3-22.8-9.1-32.7c-4.1-6.6-9.2-12.7-17.2-19.6l0,0c-1.4-1.2-3.5-1.5-5.2-0.7c-1.7,0.8-2.8,2.6-2.8,4.5v60.3l-9.8-11.6v0l-8.8-10.4c-2.9-2.9-6.8-4.5-10.8-4.5s-8,1.6-10.8,4.5c-5.8,5.8-6,15.1-0.5,21.1l0.4,0.5l19.9,28.8c0.6,0.8,0.9,1.8,0.9,2.8c0,12.8-1.1,21.5,6.4,32.1l5.2,7.2c0.9,1.3,2.4,2,4,2l0,0l29.3-0.1l23.9-0.1c1.8,0,3.4-0.9,4.2-2.5C214.2,241.9,214.2,240,213.3,238.5z" />
             </svg>
         </button>
-        <button id="help-btn" class="action-button exit-btn tooltip" data-tooltip="Help"
+        <button id="help-btn" class="action-button exit-btn tooltip auth-only hidden" data-tooltip="Help"
             data-tooltip-position="bottom">
             <svg viewBox="0 0 24 24" fill="currentColor">
                 <path
