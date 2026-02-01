@@ -8,15 +8,15 @@
     <link rel="manifest" href="./manifest.webmanifest">
     <link rel="icon" type="image/svg+xml" sizes="32x32" href="/icons/favicon-32.svg">
     <link rel="icon" type="image/svg+xml" sizes="16x16" href="/icons/favicon-16.svg">
-  <script type="module" crossorigin src="./assets/index-DTibdEhM.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-NgEU-S79.css">
+  <script type="module" crossorigin src="./assets/index-CmlTzYUn.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-BnMvBhkz.css">
 </head>
 
 <body>
     <div id="connection-lost-msg" class="hidden">We are having some issues. Check your device internet connection</div>
 
-    <!-- Landing Page (rendered by client/views/landing-view.js) -->
-    <div id="landing-page"></div>
+    <!-- Landing Page (rendered by client/components/landing-page.js) -->
+    <landing-page id="landing-page"></landing-page>
 
     <!-- Main App UI -->
     <div id="main-app-container" class="hidden">
@@ -99,11 +99,7 @@
                             <div class="indicator-label">EXERCISE</div>
                             <div id="current-exercise-panel" class="exercise-panel">
                                 <div class="exercise-list">
-                                    <div class="exercise-item active">
-                                        <div class="exercise-details">
-                                            <div class="exercise-name">Warm Up</div>
-                                            <div class="exercise-description">Basic reflex and movement drills.</div>
-                                        </div>
+                                    <exercise-item active name="Warm Up" description="Basic reflex and movement drills.">
                                         <div class="chevron-icon">
                                             <svg viewBox="0 0 24 24" fill="currentColor">
                                                 <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
@@ -122,7 +118,7 @@
                                                 TEST
                                             </button>
                                         </div>
-                                    </div>
+                                    </exercise-item>
                                 </div>
                             </div>
                             <div class="playback-controls">
@@ -271,37 +267,7 @@
     </div>
 
     <!-- Mobile Bottom Navbar -->
-    <nav class="bottom-navbar hidden">
-        <button id="nav-training" class="nav-item active">
-            <svg viewBox="0 0 24 24">
-                <path
-                    d="M21,9H15V22H13V16H11V22H9V9H3V7H21M12,2A2,2 0 0,1 14,4A2,2 0 0,1 12,6C10.89,6 10,5.1 10,4C10,2.89 10.89,2 12,2Z" />
-            </svg>
-            <span>Training</span>
-        </button>
-        <button id="nav-stats" class="nav-item auth-only hidden">
-            <svg viewBox="0 0 24 24">
-                <path d="M22,21H2V3H4V19H6V10H10V19H12V6H16V19H18V14H22V21Z" />
-            </svg>
-            <span>Stats</span>
-        </button>
-        <button id="nav-history" class="nav-item auth-only hidden">
-            <svg viewBox="0 0 24 24">
-                <path d="M19,3H14.82C14.4,1.84 13.3,1 12,1C10.7,1 9.6,1.84 9.18,3H5A2,2 0 0,0 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3M12,3A1,1 0 0,1 13,4A1,1 0 0,1 12,5A1,1 0 0,1 11,4A1,1 0 0,1 12,3M7,7H17V9H7V7M7,11H17V13H7V11M7,15H17V17H7V15Z" />
-            </svg>
-            <span>History</span>
-        </button>
-        <button id="nav-rc" class="nav-item hidden">
-            <svg viewBox="0 0 256 256">
-                <path
-                    d="M130.5,206.2l-18.9-27.3c-8.8-9.9-8.3-25,1.1-34.4c4.7-4.7,11.1-7.4,17.8-7.4c7.4,0,14.1,2.9,19.7,9.5V98.5c0-10.8-8.8-19.7-19.7-19.7H61.7C50.8,78.8,42,87.6,42,98.5v108.1c0,10.8,8.8,19.6,19.7,19.6h69.9c-0.7-3.1-1.1-6.2-1.1-9.5L130.5,206.2L130.5,206.2z M115.7,108.3c2.7,0,4.9,2.2,4.9,4.9c0,2.7-2.2,4.9-4.9,4.9c-2.7,0-4.9-2.2-4.9-4.9C110.8,110.5,113,108.3,115.7,108.3z M115.7,127.9c2.7,0,4.9,2.2,4.9,4.9c0,2.7-2.2,4.9-4.9,4.9c-2.7,0-4.9-2.2-4.9-4.9C110.8,130.1,113,127.9,115.7,127.9z M76.4,196.7c-2.7,0-4.9-2.2-4.9-4.9c0-2.7,2.2-4.9,4.9-4.9s4.9,2.2,4.9,4.9C81.3,194.5,79.1,196.7,76.4,196.7z M76.4,177.1c-2.7,0-4.9-2.2-4.9-4.9c0-2.7,2.2-4.9,4.9-4.9s4.9,2.2,4.9,4.9C81.3,174.8,79.1,177.1,76.4,177.1z M76.4,157.4c-2.7,0-4.9-2.2-4.9-4.9c0-2.7,2.2-4.9,4.9-4.9s4.9,2.2,4.9,4.9C81.3,155.2,79.1,157.4,76.4,157.4z M76.4,137.8c-2.7,0-4.9-2.2-4.9-4.9c0-2.7,2.2-4.9,4.9-4.9s4.9,2.2,4.9,4.9C81.3,135.5,79.1,137.8,76.4,137.8z M76.4,118.1c-2.7,0-4.9-2.2-4.9-4.9c0-2.7,2.2-4.9,4.9-4.9s4.9,2.2,4.9,4.9C81.3,115.9,79.1,118.1,76.4,118.1z M96.1,196.7c-2.7,0-4.9-2.2-4.9-4.9c0-2.7,2.2-4.9,4.9-4.9c2.7,0,4.9,2.2,4.9,4.9C101,194.5,98.8,196.7,96.1,196.7z M96.1,177.1c-2.7,0-4.9-2.2-4.9-4.9c0-2.7,2.2-4.9,4.9-4.9c2.7,0,4.9,2.2,4.9,4.9C101,174.8,98.8,177.1,96.1,177.1z M96.1,157.4c-2.7,0-4.9-2.2-4.9-4.9c0-2.7,2.2-4.9,4.9-4.9c2.7,0,4.9,2.2,4.9,4.9C101,155.2,98.8,157.4,96.1,157.4z M96.1,137.8c-2.7,0-4.9-2.2-4.9-4.9c0-2.7,2.2-4.9,4.9-4.9c2.7,0,4.9,2.2,4.9,4.9C101,135.5,98.8,137.8,96.1,137.8z M96.1,118.1c-2.7,0-4.9-2.2-4.9-4.9c0-2.7,2.2-4.9,4.9-4.9c2.7,0,4.9,2.2,4.9,4.9C101,115.9,98.8,118.1,96.1,118.1z M53.1,33c12.9-8.6,28-13.2,43.6-13.2c15.6,0,30.7,4.6,43.6,13.2c0.8,0.6,1.8,0.8,2.7,0.8c1.6,0,3.2-0.8,4.1-2.2c1.5-2.2,0.9-5.3-1.4-6.8c-14.5-9.7-31.5-14.9-49-14.9s-34.5,5.1-49.1,14.9c-2.2,1.5-2.9,4.6-1.3,6.8C47.8,33.9,50.8,34.5,53.1,33z M132.1,50.2c1.6,0,3.2-0.7,4.1-2.2c1.5-2.3,0.9-5.3-1.3-6.8c-11.3-7.6-24.5-11.6-38.1-11.6c-13.6,0-26.8,4-38.1,11.6c-2.3,1.5-2.9,4.6-1.4,6.8c1.5,2.2,4.6,2.9,6.8,1.3c9.7-6.5,21-9.9,32.7-9.9s23,3.4,32.7,9.9C130.2,49.9,131.2,50.2,132.1,50.2z M69.4,57.6c-2.2,1.5-2.9,4.6-1.3,6.8c1.5,2.2,4.6,2.8,6.8,1.3c12.9-8.6,30.6-8.6,43.6,0c0.8,0.6,1.8,0.8,2.7,0.8c1.6,0,3.2-0.8,4.1-2.2c1.5-2.2,0.9-5.3-1.4-6.8C107.7,46.7,85.6,46.8,69.4,57.6z M213.3,238.5l-19-33.3v-43.5c0-12.1-3-22.8-9.1-32.7c-4.1-6.6-9.2-12.7-17.2-19.6l0,0c-1.4-1.2-3.5-1.5-5.2-0.7c-1.7,0.8-2.8,2.6-2.8,4.5v60.3l-9.8-11.6v0l-8.8-10.4c-2.9-2.9-6.8-4.5-10.8-4.5s-8,1.6-10.8,4.5c-5.8,5.8-6,15.1-0.5,21.1l0.4,0.5l19.9,28.8c0.6,0.8,0.9,1.8,0.9,2.8c0,12.8-1.1,21.5,6.4,32.1l5.2,7.2c0.9,1.3,2.4,2,4,2l0,0l29.3-0.1l23.9-0.1c1.8,0,3.4-0.9,4.2-2.5C214.2,241.9,214.2,240,213.3,238.5z" />
-            </svg>
-            <span>Devices</span>
-        </button>
-        <button id="nav-profile" class="nav-item">
-            <div id="nav-profile-avatar" class="nav-avatar"></div>
-        </button>
-    </nav>
+    <bottom-navbar id="bottom-navbar" class="hidden"></bottom-navbar>
 
     <div id="global-tooltip"></div>
 
@@ -341,22 +307,18 @@
                 <div class="loading-text">Loading stats...</div>
             </div>
             <div class="kpi-section">
-                <div class="kpi-card">
-                    <div class="kpi-label">Max Speed</div>
+                <stats-card label="Max Speed">
                     <div class="kpi-value" id="kpi-max-speed-7d">--</div>
-                </div>                
-                <div class="kpi-card">
-                    <div class="kpi-label">Current Streak</div>
+                </stats-card>
+                <stats-card label="Current Streak">
                     <div class="kpi-value" id="kpi-streak">--</div>
-                </div>
-                <div class="kpi-card">
-                    <div class="kpi-label">Moves per day (last 7 days)</div>
+                </stats-card>
+                <stats-card label="Moves per day (last 7 days)">
                     <div class="kpi-value" id="kpi-avg-moves-7d">--</div>
-                </div>
-                <div class="kpi-card">
-                    <div class="kpi-label">Moves per day (last 30 days)</div>
+                </stats-card>
+                <stats-card label="Moves per day (last 30 days)">
                     <div class="kpi-value" id="kpi-avg-moves-30d">--</div>
-                </div>
+                </stats-card>
 
             </div>
             <div class="chart-section">
