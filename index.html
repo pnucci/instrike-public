@@ -8,8 +8,8 @@
     <link rel="manifest" href="./manifest.webmanifest">
     <link rel="icon" type="image/svg+xml" sizes="32x32" href="/icons/favicon-32.svg">
     <link rel="icon" type="image/svg+xml" sizes="16x16" href="/icons/favicon-16.svg">
-  <script type="module" crossorigin src="./assets/index-SSnA5o3Z.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-DGkMyMrB.css">
+  <script type="module" crossorigin src="./assets/index-CccVhvr-.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-g0v-MWpK.css">
 </head>
 
 <body>
@@ -45,15 +45,15 @@
             <div id="main-sidebar-content">
                 <div class="sidebar-top-bar">
                     <div class="mobile-panel-header-inline">
-                        <button id="close-sidebar-mobile-btn" class="back-button tooltip" data-tooltip="Close Sidebar"
+                        <sidebar-button id="close-sidebar-mobile-btn" variant="back" data-tooltip="Close Sidebar"
                             data-tooltip-position="top">
                             <svg viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"></path>
                             </svg>
-                        </button>
+                        </sidebar-button>
                     </div>
                     <div class="sidebar-top-bar-actions">
-                        <button id="leave-session-btn" class="control-button tooltip session-only hidden"
+                        <sidebar-button id="leave-session-btn" variant="transparent" class="session-only hidden"
                             data-tooltip="Leave Session" data-tooltip-position="bottom">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                 stroke-linecap="round" stroke-linejoin="round"
@@ -62,13 +62,13 @@
                                 <polyline points="10 17 15 12 10 7"></polyline>
                                 <line x1="15" y1="12" x2="3" y2="12"></line>
                             </svg>
-                        </button>
-                        <button id="share-btn" class="control-button tooltip session-only hidden"
+                        </sidebar-button>
+                        <sidebar-button id="share-btn" variant="transparent" class="session-only hidden"
                             data-tooltip="Share Session" data-tooltip-position="bottom"><svg viewBox="0 0 24 24">
                                 <path
                                     d="M18,16.08C17.24,16.08 16.56,16.38 16.04,16.85L8.91,12.7C8.96,12.47 9,12.24 9,12C9,11.76 8.96,11.53 8.91,11.3L16.04,7.15C16.56,7.62 17.24,7.92 18,7.92C19.66,7.92 21,6.58 21,4.92C21,3.26 19.66,1.92 18,1.92C16.34,1.92 15,3.26 15,4.92C15,5.16 15.04,5.39 15.09,5.62L7.96,9.77C7.44,9.3 6.76,9 6,9C4.34,9 3,10.34 3,12C3,13.66 4.34,15 6,15C6.76,15 7.44,14.7 7.96,14.23L15.09,18.38C15.04,18.61 15,18.84 15,19.08C15,20.74 16.34,22.08 18,22.08C19.66,22.08 21,20.74 21,19.08C21,17.42 19.66,16.08 18,16.08Z" />
                             </svg>
-                        </button>
+                        </sidebar-button>
                     </div>
                 </div>
                 <div class="sidebar-scroll-content">
@@ -114,17 +114,17 @@
                             </div>
                             <div class="playback-controls">
                                 <div class="playback-group">
-                                    <button id="configure-btn" class="control-button configure-btn tooltip"
+                                    <sidebar-button id="configure-btn" variant="circular" class="configure-btn"
                                         data-tooltip="Configure Current Exercise (M)" data-tooltip-position="top">
                                         <svg viewBox="0 0 24 24">
                                             <path
                                                 d="M14.06,9L15,9.94L5.92,19H5V18.08L14.06,9M17.66,3C17.41,3 17.15,3.1 16.96,3.29L15.13,5.12L18.88,8.87L20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18.17,3.09 17.92,3 17.66,3M14.06,6.19L3,17.25V21H6.75L17.81,9.94L14.06,6.19Z" />
                                         </svg>
-                                    </button>
-                                    <button id="test-btn" class="control-button test-btn tooltip"
+                                    </sidebar-button>
+                                    <sidebar-button id="test-btn" variant="circular" class="test-btn"
                                         data-tooltip="Test (T)" data-tooltip-position="top">
                                         TEST
-                                    </button>
+                                    </sidebar-button>
                                 </div>
                             </div>
                         </div>
@@ -193,14 +193,14 @@
                         </div>
                         <div class="stats-footer">
                             <div class="playback-group">
-                                <button id="clear-stats-btn" class="control-button tooltip"
+                                <sidebar-button id="clear-stats-btn" variant="circular"
                                     data-tooltip="Clear Counters (Backspace)" data-tooltip-position="top">
                                     <svg viewBox="0 0 24 24" fill="currentColor">
                                         <path
                                             d="M22,3H7C6.31,3 5.77,3.35 5.41,3.88L0,12L5.41,20.11C5.77,20.64 6.31,21 7,21H22A2,2 0 0,0 24,19V5A2,2 0 0,0 22,3M19,15.59L17.59,17L14,13.41L10.41,17L9,15.59L12.59,12L9,8.41L10.41,7L14,10.59L17.59,7L19,8.41L15.41,12L19,15.59Z">
                                         </path>
                                     </svg>
-                                </button>
+                                </sidebar-button>
                             </div>
                         </div>
                     </div>
@@ -255,65 +255,6 @@
 
     <div id="global-tooltip"></div>
 
-    <!-- History Screen -->
-    <div id="history-screen" class="full-screen hidden">
-        <div class="screen-header">
-            <button id="close-history-btn" class="back-button">
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"></path>
-                </svg>
-            </button>
-            <h2>History</h2>
-        </div>
-        <div class="full-screen-content">
-            <div class="history-list-container">
-                <ul id="history-list" class="history-list">
-                    <!-- Items will be injected here -->
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <!-- Stats Screen -->
-    <div id="stats-screen" class="full-screen hidden">
-        <div class="screen-header">
-            <button id="close-stats-btn" class="back-button">
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"></path>
-                </svg>
-            </button>
-            <h2>Stats</h2>
-        </div>
-        <div class="full-screen-content">
-        <div class="stats-content-container">
-            <div id="stats-loading-overlay" class="loading-overlay hidden">
-                <div class="loading-spinner"></div>
-                <div class="loading-text">Loading stats...</div>
-            </div>
-            <div class="kpi-section">
-                <stats-card label="Max Speed">
-                    <div class="kpi-value" id="kpi-max-speed-7d">--</div>
-                </stats-card>
-                <stats-card label="Current Streak">
-                    <div class="kpi-value" id="kpi-streak">--</div>
-                </stats-card>
-                <stats-card label="Moves per day (last 7 days)">
-                    <div class="kpi-value" id="kpi-avg-moves-7d">--</div>
-                </stats-card>
-                <stats-card label="Moves per day (last 30 days)">
-                    <div class="kpi-value" id="kpi-avg-moves-30d">--</div>
-                </stats-card>
-
-            </div>
-            <div class="chart-section">
-                <h3>Workload</h3>
-                <div class="chart-container">
-                    <canvas id="stats-chart"></canvas>
-                </div>
-            </div>
-        </div>
-        </div>
-    </div>
 
     <!-- Profile Screen (header removed for compact layout) -->
     <div id="profile-screen" class="full-screen hidden">
