@@ -8,8 +8,8 @@
     <link rel="manifest" href="./manifest.webmanifest">
     <link rel="icon" type="image/svg+xml" sizes="32x32" href="/icons/favicon-32.svg">
     <link rel="icon" type="image/svg+xml" sizes="16x16" href="/icons/favicon-16.svg">
-  <script type="module" crossorigin src="./assets/index-DljSlLRM.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-DShExVbc.css">
+  <script type="module" crossorigin src="./assets/index-BDzHLlvo.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-BxancHnQ.css">
 </head>
 
 <body>
@@ -62,11 +62,9 @@
                                 <line x1="15" y1="12" x2="3" y2="12"></line>
                             </svg>
                         </sidebar-button>
-                        <sidebar-button id="share-btn" variant="transparent" class="session-only hidden"
-                            data-tooltip="Share Session" data-tooltip-position="bottom"><svg viewBox="0 0 24 24">
-                                <path
-                                    d="M18,16.08C17.24,16.08 16.56,16.38 16.04,16.85L8.91,12.7C8.96,12.47 9,12.24 9,12C9,11.76 8.96,11.53 8.91,11.3L16.04,7.15C16.56,7.62 17.24,7.92 18,7.92C19.66,7.92 21,6.58 21,4.92C21,3.26 19.66,1.92 18,1.92C16.34,1.92 15,3.26 15,4.92C15,5.16 15.04,5.39 15.09,5.62L7.96,9.77C7.44,9.3 6.76,9 6,9C4.34,9 3,10.34 3,12C3,13.66 4.34,15 6,15C6.76,15 7.44,14.7 7.96,14.23L15.09,18.38C15.04,18.61 15,18.84 15,19.08C15,20.74 16.34,22.08 18,22.08C19.66,22.08 21,20.74 21,19.08C21,17.42 19.66,16.08 18,16.08Z" />
-                            </svg>
+                        <sidebar-button id="invite-btn" variant="transparent" class="session-only hidden"
+                            data-tooltip="Invite to training" data-tooltip-position="bottom">
+                            <svg style="fill: none; stroke: #ccc;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
                         </sidebar-button>
                     </div>
                 </div>
@@ -130,15 +128,16 @@
                     </div>
                     <div class="hud-section">
                         <div class="general-stats">
-                            <div class="stat-item">
+                            <div class="stat-item text-left">
                                 <div class="stat-label">Time Active</div>
-                                <div class="stat-value">18:42</div>
+                                <div id="time-active-value" class="stat-value">18:42</div>
                             </div>
-                            <div class="stat-item">
+                            <div class="stat-item text-right">
                                 <div class="stat-label">Strikes</div>
-                                <div class="stat-value">412</div>
+                                <div id="strikes-value" class="stat-value">412</div>
                             </div>
                         </div>
+                        <div class="stat-label histogram-label">Moves per speed</div>
                         <div id="histogram" class="histogram-container">
                             <div class="histogram-row" data-bucket-label="0-2">
                                 <div class="col-num">0-2</div>
@@ -191,6 +190,12 @@
                             </div>
                         </div>
                         <div class="stats-footer">
+                            <sidebar-button id="toggle-histogram-btn" variant="circular" class="toggle-histogram-btn"
+                                data-tooltip="Toggle Reactions per Speed" data-tooltip-position="top">
+                                <svg viewBox="0 0 24 24" fill="currentColor" style="transform: rotate(90deg)">
+                                    <path d="M22,21H2V3H4V19H6V10H10V19H12V6H16V19H18V14H22V21Z" />
+                                </svg>
+                            </sidebar-button>
                             <div class="playback-group">
                                 <sidebar-button id="clear-stats-btn" variant="circular"
                                     data-tooltip="Clear Counters (Backspace)" data-tooltip-position="top">
