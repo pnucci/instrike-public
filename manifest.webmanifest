@@ -1,13 +1,13 @@
 {
-  "name": "instrike",
-  "short_name": "instrike",
+  "name": "InStrike",
+  "short_name": "InStrike",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#000000",
   "theme_color": "#000000",
   "icons": [
     {
-      "src": "/logo.svg",
+      "src": "/favicon.svg",
       "type": "image/svg+xml"
     }
   ]
