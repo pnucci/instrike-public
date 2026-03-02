@@ -8,14 +8,17 @@
     <title>InStrike</title>
     <link rel="manifest" href="./manifest.webmanifest" crossorigin="use-credentials">
     <link rel="icon" type="image/svg+xml" href="./favicon.svg">
-  <script type="module" crossorigin src="./assets/index-CEUs66Uh.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-CdVJ-JHO.css">
+  <script type="module" crossorigin src="./assets/index-CrYvFwlF.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-BkPk5bjj.css">
 </head>
 
 <body>
     <div id="connection-lost-msg" class="hidden">We are having some issues. Check your device internet connection</div>
 
     <div id="app-root">
+        <!-- Pre Login View (New Separate View) -->
+        <pre-login-view id="pre-login-view" class="hidden"></pre-login-view>
+
         <!-- Landing Page (rendered by client/components/landing-page.js) -->
         <landing-page id="landing-page"></landing-page>
 
@@ -124,11 +127,11 @@
                         <div class="general-stats">
                             <div class="stat-item text-left">
                                 <div class="stat-label">Time Active</div>
-                                <div id="time-active-value" class="stat-value">18:42</div>
+                                <div id="time-active-value" class="stat-value">0:00</div>
                             </div>
                             <div class="stat-item text-right">
                                 <div class="stat-label">Strikes</div>
-                                <div id="strikes-value" class="stat-value">412</div>
+                                <div id="strikes-value" class="stat-value">0</div>
                             </div>
                         </div>
                         <div class="stat-label histogram-label">Strikes per speed</div>
@@ -282,6 +285,12 @@
                     </svg>
                     Manage Account
                 </button> -->
+                <button id="profile-account-settings" class="menu-item">
+                    <svg viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M12,15.5A3.5,3.5 0 0,1 8.5,12A3.5,3.5 0 0,1 12,8.5A3.5,3.5 0 0,1 15.5,12A3.5,3.5 0 0,1 12,15.5M19.43,12.97C19.47,12.65 19.5,12.33 19.5,12C19.5,11.67 19.47,11.34 19.43,11L21.54,9.37C21.73,9.22 21.78,8.95 21.66,8.73L19.66,5.27C19.54,5.05 19.27,4.96 19.05,5.05L16.56,6.05C16.04,5.66 15.5,5.32 14.87,5.07L14.5,2.42C14.46,2.18 14.25,2 14,2H10C9.75,2 9.54,2.18 9.5,2.42L9.13,5.07C8.5,5.32 7.96,5.66 7.44,6.05L4.95,5.05C4.73,4.96 4.46,5.05 4.34,5.27L2.34,8.73C2.21,8.95 2.27,9.22 2.46,9.37L4.57,11C4.53,11.34 4.5,11.67 4.5,12C4.5,12.33 4.53,12.65 4.57,12.97L2.46,14.63C2.27,14.78 2.21,15.05 2.34,15.27L4.34,18.73C4.46,18.95 4.73,19.03 4.95,18.95L7.44,17.94C7.96,18.34 8.5,18.68 9.13,18.93L9.5,21.58C9.54,21.82 9.75,22 10,22H14C14.25,22 14.46,21.82 14.5,21.58L14.87,18.93C15.5,18.68 16.04,18.34 16.56,17.94L19.05,18.95C19.27,19.03 19.54,18.95 19.66,18.73L21.66,15.27C21.78,15.05 21.73,14.78 21.54,14.63L19.43,12.97Z" />
+                    </svg>
+                    Account Settings
+                </button>
                 <button id="profile-help" class="menu-item">
                     <svg viewBox="0 0 24 24">
                         <path
@@ -294,7 +303,7 @@
                         <path
                             d="M18,16.08C17.24,16.08 16.56,16.38 16.04,16.85L8.91,12.7C8.96,12.47 9,12.24 9,12C9,11.76 8.96,11.53 8.91,11.3L16.04,7.15C16.56,7.62 17.24,7.92 18,7.92C19.66,7.92 21,6.58 21,4.92C21,3.26 19.66,1.92 18,1.92C16.34,1.92 15,3.26 15,4.92C15,5.16 15.04,5.39 15.09,5.62L7.96,9.77C7.44,9.3 6.76,9 6,9C4.34,9 3,10.34 3,12C3,13.66 4.34,15 6,15C6.76,15 7.44,14.7 7.96,14.23L15.09,18.38C15.04,18.61 15,18.84 15,19.08C15,20.74 16.34,22.08 18,22.08C19.66,22.08 21,20.74 21,19.08C21,17.42 19.66,16.08 18,16.08Z" />
                     </svg>
-                    Share Instrike
+                    Share InStrike
                 </button>
                 <button id="profile-sign-out" class="menu-item">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0,1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
